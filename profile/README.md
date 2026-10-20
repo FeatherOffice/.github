@@ -1,14 +1,32 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/FeatherOffice/feather-ui/main/assets/logos/pena.svg" width="96" alt="FeatherOffice">
+  <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/pena.svg" width="96" alt="FeatherWorks">
 </p>
 
-<h1 align="center">FeatherOffice</h1>
+<h1 align="center">FeatherWorks</h1>
 
 <p align="center">
   Uma família de aplicativos de escritório leves, nativos e privados, feitos 100% em Rust com Iced.
 </p>
 
----
+## Comece pelo launcher
+
+O **FeatherWorks Launcher** instala, atualiza e abre todos os aplicativos da suíte, e confere cada pacote pelo SHA256 antes de instalar.
+
+<p align="center">
+  <a href="https://github.com/feather-works/featherlauncher/releases/latest/download/featherlauncher-linux-amd64.deb"><b>⬇ Linux (.deb)</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/feather-works/featherlauncher/releases/latest/download/featherlauncher-linux-x86_64.tar.gz"><b>⬇ Linux (.tar.gz)</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/feather-works/featherlauncher/releases/latest/download/featherlauncher-windows-x64.exe"><b>⬇ Windows (.exe)</b></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/feather-works/featherlauncher">
+    <img src="https://raw.githubusercontent.com/feather-works/featherlauncher/main/docs/launcher.png" width="820" alt="FeatherWorks Launcher com o FeatherSheet e o FeatherSlide instalados">
+  </a>
+</p>
+
+No `.tar.gz`, descompacte e rode `./instalar.sh`; o `.exe` do Windows é portátil, é só abrir.
 
 ## Privacidade por padrão
 
@@ -16,13 +34,16 @@ Sem conta, sem login, sem telemetria. Tudo roda na sua máquina e nada do seu co
 
 ## Os aplicativos
 
-| | Aplicativo | Para quê | Formato |
-|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/FeatherOffice/feather-ui/main/assets/logos/feathersheet.svg" width="32"> | **FeatherSheet** | Planilhas: fórmulas em português e inglês, gráficos, tabelas dinâmicas, macros, abre e grava `.xlsx` | `.fshz` |
-| <img src="https://raw.githubusercontent.com/FeatherOffice/feather-ui/main/assets/logos/featherdocs.svg" width="32"> | **FeatherDocs** | Textos: DOCX, LaTeX e Markdown | `.fdoz` |
-| <img src="https://raw.githubusercontent.com/FeatherOffice/feather-ui/main/assets/logos/featherslide.svg" width="32"> | **FeatherSlide** | Apresentações: abre `.pptx` e `.odp` | `.fsdz` |
+| | Aplicativo | Para quê | Estado | Instalar sozinho |
+|---|---|---|---|---|
+| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/feathersheet.svg" width="32"> | [**FeatherSheet**](https://github.com/feather-works/feathersheet) | Planilhas: fórmulas em português e inglês, gráficos, tabelas dinâmicas, macros, abre e grava `.xlsx` | v0.1.3 | [Linux, Windows e macOS](https://github.com/feather-works/feathersheet/releases/latest) |
+| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/featherslide.svg" width="32"> | [**FeatherSlide**](https://github.com/feather-works/featherslide) | Apresentações: abre `.pptx` e `.odp`, exporta PDF | v0.1.0 | [Linux e Windows](https://github.com/feather-works/featherslide/releases/latest) |
+| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/featherdocs.svg" width="32"> | [**FeatherDocs**](https://github.com/feather-works/featherdocs) | Textos: DOCX, LaTeX e Markdown | em desenvolvimento | — |
+| | **FeatherPDF** | Leitura e organização de PDF | em desenvolvimento | — |
+| | **FeatherCAD** | Desenho técnico 2D e 3D | em desenvolvimento | — |
+| | **FeatherCode** | Editor de código | em desenvolvimento | — |
 
-Cada aplicativo é um produto independente, com repositório, versão e instalador próprios. O instalador geral vai permitir escolher só os que você quer.
+Cada aplicativo é um produto independente, com repositório, versão e instalador próprios. Quem prefere instalar sem o launcher encontra os pacotes (`.deb`, `.tar.gz`, `.exe`) e o `SHA256SUMS` na página de releases de cada repositório.
 
 ## Os arquivos `f··z`
 
@@ -121,11 +142,12 @@ arquivo.f··z
 
 | Repositório | O que faz |
 |---|---|
-| [feather-ui](https://github.com/FeatherOffice/feather-ui) | Tema, ícones, marca e componentes Iced |
-| [feather-draw](https://github.com/FeatherOffice/feather-draw) | Geometria, caminhos, SVG, PDF e tinta com pressão |
-| [feather-charts](https://github.com/FeatherOffice/feather-charts) | Gráficos: modelo, tipos, eixos e desenho |
-| [feather-shapes](https://github.com/FeatherOffice/feather-shapes) | Formas, ícones e SmartArt |
+| [feather-ui](https://github.com/feather-works/feather-ui) | Tema, ícones, marca e componentes Iced |
+| [feather-draw](https://github.com/feather-works/feather-draw) | Geometria, caminhos, SVG, PDF e tinta com pressão |
+| [feather-charts](https://github.com/feather-works/feather-charts) | Gráficos: modelo, tipos, eixos e desenho |
+| [feather-shapes](https://github.com/feather-works/feather-shapes) | Formas, ícones e SmartArt |
+| [feather-io](https://github.com/feather-works/feather-io) | Arquivos, tabelas, imagens e macros: formatos e conversão |
 
 ## Estado
 
-Em desenvolvimento. A primeira versão alfa de cada aplicativo está prevista para **30/10/2026**.
+FeatherSheet e FeatherSlide já têm versão publicada; os demais aplicativos estão em desenvolvimento e entram no launcher conforme forem lançados.
