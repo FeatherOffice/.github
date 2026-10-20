@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/pena.svg" width="96" alt="FeatherWorks">
+  <img src="imagens/featherworks.svg" width="96" alt="FeatherWorks">
 </p>
 
 <h1 align="center">FeatherWorks</h1>
@@ -22,7 +22,7 @@ O **FeatherWorks Launcher** instala, atualiza e abre todos os aplicativos da su�
 
 <p align="center">
   <a href="https://github.com/feather-works/featherlauncher">
-    <img src="https://raw.githubusercontent.com/feather-works/featherlauncher/main/docs/launcher.png" width="820" alt="FeatherWorks Launcher com o FeatherSheet e o FeatherSlide instalados">
+    <img src="imagens/launcher.png" width="820" alt="FeatherWorks Launcher com o FeatherSheet, o FeatherSlide e o FeatherCode instalados">
   </a>
 </p>
 
@@ -36,12 +36,12 @@ Sem conta, sem login, sem telemetria. Tudo roda na sua máquina e nada do seu co
 
 | | Aplicativo | Para quê | Estado | Instalar sozinho |
 |---|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/feathersheet.svg" width="32"> | [**FeatherSheet**](https://github.com/feather-works/feathersheet) | Planilhas: fórmulas em português e inglês, gráficos, tabelas dinâmicas, macros, abre e grava `.xlsx` | v0.1.3 | [Linux, Windows e macOS](https://github.com/feather-works/feathersheet/releases/latest) |
-| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/featherslide.svg" width="32"> | [**FeatherSlide**](https://github.com/feather-works/featherslide) | Apresentações: abre `.pptx` e `.odp`, exporta PDF | v0.1.0 | [Linux e Windows](https://github.com/feather-works/featherslide/releases/latest) |
-| <img src="https://raw.githubusercontent.com/feather-works/feather-ui/main/assets/logos/featherdocs.svg" width="32"> | [**FeatherDocs**](https://github.com/feather-works/featherdocs) | Textos: DOCX, LaTeX e Markdown | em desenvolvimento | — |
-| | **FeatherPDF** | Leitura e organização de PDF | em desenvolvimento | — |
-| | **FeatherCAD** | Desenho técnico 2D e 3D | em desenvolvimento | — |
-| | **FeatherCode** | Editor de código | em desenvolvimento | — |
+| <img src="imagens/feathersheet.svg" width="32"> | [**FeatherSheet**](https://github.com/feather-works/feathersheet) | Planilhas: fórmulas em português e inglês, gráficos, tabelas dinâmicas, macros, abre e grava `.xlsx` | v0.1.3 | [Linux, Windows e macOS](https://github.com/feather-works/feathersheet/releases/latest) |
+| <img src="imagens/featherslide.svg" width="32"> | [**FeatherSlide**](https://github.com/feather-works/featherslide) | Apresentações: abre `.pptx` e `.odp`, exporta PDF | v0.1.0 | [Linux e Windows](https://github.com/feather-works/featherslide/releases/latest) |
+| <img src="imagens/featherdocs.svg" width="32"> | [**FeatherDocs**](https://github.com/feather-works/featherdocs) | Textos: DOCX, LaTeX e Markdown | em desenvolvimento | — |
+| <img src="imagens/featherpdf.svg" width="32"> | **FeatherPDF** | Leitura e organização de PDF | em desenvolvimento | — |
+| <img src="imagens/feathercad.svg" width="32"> | **FeatherCAD** | Desenho técnico 2D e 3D | em desenvolvimento | — |
+| <img src="imagens/feathercode.svg" width="32"> | **FeatherCode** | Editor de código | em desenvolvimento | — |
 
 Cada aplicativo é um produto independente, com repositório, versão e instalador próprios. Quem prefere instalar sem o launcher encontra os pacotes (`.deb`, `.tar.gz`, `.exe`) e o `SHA256SUMS` na página de releases de cada repositório.
 
