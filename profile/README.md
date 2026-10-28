@@ -5,12 +5,12 @@
 <h1 align="center">FeatherWorks</h1>
 
 <p align="center">
-  Uma família de aplicativos de escritório leves, nativos e privados, feitos 100% em Rust com Iced.
+  A family of lightweight, native and private office apps, 100% Rust, on our own UI toolkit (<a href="https://github.com/feather-works/pelicano">pelicano</a>).
 </p>
 
-## Comece pelo launcher
+## Start with the launcher
 
-O **FeatherWorks Launcher** instala, atualiza e abre todos os aplicativos da suíte, e confere cada pacote pelo SHA256 antes de instalar.
+The **FeatherWorks Launcher** installs, updates and opens every app in the suite. It picks the right package for your system (Linux, Windows or macOS) and checks each one against its SHA256 before installing.
 
 <p align="center">
   <a href="https://github.com/feather-works/featherlauncher/releases/latest/download/featherlauncher-linux-amd64.deb"><b>⬇ Linux (.deb)</b></a>
@@ -22,132 +22,137 @@ O **FeatherWorks Launcher** instala, atualiza e abre todos os aplicativos da su�
 
 <p align="center">
   <a href="https://github.com/feather-works/featherlauncher">
-    <img src="imagens/launcher.png" width="820" alt="FeatherWorks Launcher com o FeatherSheet, o FeatherSlide e o FeatherCode instalados">
+    <img src="imagens/launcher.png" width="820" alt="FeatherWorks Launcher with FeatherSheet, FeatherSlide and FeatherCode installed">
   </a>
 </p>
 
-No `.tar.gz`, descompacte e rode `./instalar.sh`; o `.exe` do Windows é portátil, é só abrir.
+For the `.tar.gz`, extract it and run `./instalar.sh`; the Windows `.exe` is portable, just open it.
 
-## Privacidade por padrão
+## Private by default
 
-Sem conta, sem login, sem telemetria. Tudo roda na sua máquina e nada do seu conteúdo sai dela.
+No account, no login, no telemetry. Everything runs on your machine and none of your content leaves it.
 
-## Os aplicativos
+## The apps
 
-| | Aplicativo | Para quê | Estado | Instalar sozinho |
+| | App | What for | Status | Standalone install |
 |---|---|---|---|---|
-| <img src="imagens/feathersheet.svg" width="32"> | [**FeatherSheet**](https://github.com/feather-works/feathersheet) | Planilhas: fórmulas em português e inglês, gráficos, tabelas dinâmicas, macros, abre e grava `.xlsx` | v0.1.3 | [Linux, Windows e macOS](https://github.com/feather-works/feathersheet/releases/latest) |
-| <img src="imagens/featherslide.svg" width="32"> | [**FeatherSlide**](https://github.com/feather-works/featherslide) | Apresentações: abre `.pptx` e `.odp`, exporta PDF | v0.1.0 | [Linux e Windows](https://github.com/feather-works/featherslide/releases/latest) |
-| <img src="imagens/featherdocs.svg" width="32"> | [**FeatherDocs**](https://github.com/feather-works/featherdocs) | Textos: DOCX, LaTeX e Markdown | em desenvolvimento | — |
-| <img src="imagens/featherpdf.svg" width="32"> | **FeatherPDF** | Leitura e organização de PDF | em desenvolvimento | — |
-| <img src="imagens/feathercad.svg" width="32"> | **FeatherCAD** | Desenho técnico 2D e 3D | em desenvolvimento | — |
-| <img src="imagens/feathercode.svg" width="32"> | **FeatherCode** | Editor de código | em desenvolvimento | — |
+| <img src="imagens/feathersheet.svg" width="32"> | [**FeatherSheet**](https://github.com/feather-works/feathersheet) | Spreadsheets: formulas in Portuguese and English, millions of rows, charts, pivot tables, OpenQuery, `.xlsx` and Excel VBA macros converted to JavaScript | v0.2.0 | [Linux, Windows and macOS](https://github.com/feather-works/feathersheet/releases/latest) |
+| <img src="imagens/featherslide.svg" width="32"> | [**FeatherSlide**](https://github.com/feather-works/featherslide) | Presentations: opens `.pptx` and `.odp`, exports PDF | v0.1.0 | [Linux and Windows](https://github.com/feather-works/featherslide/releases/latest) |
+| <img src="imagens/feathercode.svg" width="32"> | [**FeatherCode**](https://github.com/feather-works/feathercode) | Code editor with Claude Code in the side panel | v0.0.2 | [Linux and Windows](https://github.com/feather-works/feathercode/releases/latest) |
+| | [**FeatherNotes**](https://github.com/feather-works/feathernotes) | Notepad and desktop sticky notes: tabs that come back, Markdown, 30+ encodings | v0.1.7 | [Linux and Windows](https://github.com/feather-works/feathernotes/releases/latest) |
+| <img src="imagens/featherdocs.svg" width="32"> | [**FeatherDocs**](https://github.com/feather-works/featherdocs) | Documents: DOCX, LaTeX and Markdown | in development | — |
+| <img src="imagens/featherpdf.svg" width="32"> | **FeatherPDF** | Reading and organizing PDFs: annotations, forms, OCR | in development | — |
+| <img src="imagens/feathercad.svg" width="32"> | **FeatherCAD** | 2D and 3D technical drawing | in development | — |
 
-Cada aplicativo é um produto independente, com repositório, versão e instalador próprios. Quem prefere instalar sem o launcher encontra os pacotes (`.deb`, `.tar.gz`, `.exe`) e o `SHA256SUMS` na página de releases de cada repositório.
+Each app is an independent product with its own repository, version and installer. If you prefer to install without the launcher, each repository's releases page has the packages (`.deb`, `.tar.gz`, `.exe`) and the `SHA256SUMS`.
 
-## Os arquivos `f··z`
+## The `f··z` files
 
 ```
 f   sh   z      → .fshz  (FeatherSheet)
 f   do   z      → .fdoz  (FeatherDocs)
 f   sd   z      → .fsdz  (FeatherSlide)
-│   │    └── z: compactado (ZIP ou gzip)
-│   └─────── o tipo do arquivo
+│   │    └── z: compressed (ZIP or gzip)
+│   └─────── the file type
 └─────────── Feather
 ```
 
-O conteúdo fica em **Apache Arrow**, um formato binário por colunas, sem JSON dentro.
+The content is stored in **Apache Arrow**, a binary columnar format, with no JSON inside.
 
-### `.fsdz` (apresentação, ZIP)
+### `.fsdz` (presentation, ZIP)
 
 ```
 apresentacao.fsdz
 ├── data/
-│   ├── apresentacao.arrow   ← 1 linha: título, autor, proporção, versão do formato
-│   ├── slides.arrow         ← 1 linha por slide: layout, fundo, notas, oculto, comentários
-│   ├── elementos.arrow      ← 1 linha por elemento: slide, posição, cores, texto, estilo,
-│   │                          link, tabela/gráfico (coluna "dados")
-│   ├── personalizadas.arrow ← sequências de slides personalizadas
-│   └── fontes.arrow         ← quais fontes estão embutidas
+│   ├── apresentacao.arrow   ← 1 row: title, author, aspect ratio, format version
+│   ├── slides.arrow         ← 1 row per slide: layout, background, notes, hidden, comments
+│   ├── elementos.arrow      ← 1 row per element: slide, position, colors, text, style,
+│   │                          link, table/chart ("dados" column)
+│   ├── personalizadas.arrow ← custom slide shows
+│   └── fontes.arrow         ← which fonts are embedded
 └── assets/
-    ├── imagem-1.png         ← imagens como arquivo de verdade (não base64)
+    ├── imagem-1.png         ← images as real files (not base64)
     └── fontes/
-        └── Roboto-regular.ttf  ← fontes embutidas
+        └── Roboto-regular.ttf  ← embedded fonts
 ```
 
-### `.fdoz` (documento, ZIP)
+### `.fdoz` (document, ZIP)
 
 ```
 documento.fdoz
 ├── data/
-│   ├── documento.arrow      ← 1 linha: título, autor, papel, margens, cabeçalho, rodapé
-│   ├── blocos.arrow         ← 1 linha por parágrafo, título, lista, tabela…
-│   ├── trechos.arrow        ← o texto formatado (negrito, cor…), apontando o bloco
-│   ├── tabelas.arrow        ← a forma de cada tabela (linhas, colunas, mesclas)
-│   ├── estilos.arrow        ← estilos com nome (Título 1, Citação…)
-│   ├── marcadores.arrow     ← indicadores e referências cruzadas
-│   ├── comentarios.arrow    ← comentários da revisão
-│   ├── respostas.arrow      ← respostas aos comentários
-│   └── fontes.arrow         ← fontes embutidas
+│   ├── documento.arrow      ← 1 row: title, author, paper, margins, header, footer
+│   ├── blocos.arrow         ← 1 row per paragraph, heading, list, table…
+│   ├── trechos.arrow        ← the formatted text (bold, color…), pointing to its block
+│   ├── tabelas.arrow        ← the shape of each table (rows, columns, merges)
+│   ├── estilos.arrow        ← named styles (Heading 1, Quote…)
+│   ├── marcadores.arrow     ← bookmarks and cross-references
+│   ├── comentarios.arrow    ← review comments
+│   ├── respostas.arrow      ← replies to comments
+│   └── fontes.arrow         ← embedded fonts
 └── assets/
     └── imagem-1.png
 ```
 
-### `.fshz` (planilha, binário FSH3)
+### `.fshz` (spreadsheet, FSH3 binary)
 
-Planilha pode ter milhões de linhas. Por isso esse formato é um fluxo binário único, sem vários arquivos dentro:
+A spreadsheet can have millions of rows, so this format is a single binary stream instead of many files inside an archive:
 
 ```
 planilha.fshz
-├── "FSH3"                         ← assinatura (4 bytes)
+├── "FSH3"                         ← signature (4 bytes)
 └── gzip ──────────────────────────────────────────────
-    ├── tamanho dos metadados      ← u32
-    ├── metadados (MessagePack)
-    │   ├── versão, aba ativa, nomes definidos, estilos, tabela de textos
-    │   └── uma entrada por aba:
-    │       nome, cor da aba, oculta, larguras e alturas,
-    │       gráficos, tabelas, tabelas dinâmicas, OpenQuery, validação,
-    │       mesclas, imagens, formas, tinta, botões, comentários,
-    │       formatação condicional, estilos por célula/linha/coluna,
-    │       fórmulas (padrão por coluna), células avulsas
-    └── blocos Apache Arrow IPC    ← os valores das células, coluna por coluna
+    ├── metadata size              ← u32
+    ├── metadata (MessagePack)
+    │   ├── version, active sheet, defined names, styles, string table
+    │   └── one entry per sheet:
+    │       name, tab color, hidden, column widths and row heights,
+    │       charts, tables, pivot tables, OpenQuery, validation,
+    │       merges, images, shapes, ink, buttons, comments,
+    │       conditional formatting, cell/row/column styles,
+    │       formulas (one pattern per column), loose cells
+    └── Apache Arrow IPC blocks    ← cell values, column by column
 ```
 
-### O que vem depois
+### What comes next
 
-O contrato do formato prevê um repositório **Git embutido** em cada arquivo, para guardar o histórico de versões sem servidor:
+The format contract reserves an **embedded Git repository** in each file, to keep version history without a server:
 
 ```
 arquivo.f··z
 ├── manifest.json
-├── .git/        ← ainda não implementado
+├── .git/        ← not implemented yet
 ├── data/
 └── assets/
 ```
 
-### Por que é melhor que `.xlsx`, `.docx` e `.pptx`
+### Why it beats `.xlsx`, `.docx` and `.pptx`
 
 | | Office (`.xlsx` / `.docx` / `.pptx`) | Feather (`.f··z`) |
 |---|---|---|
-| Conteúdo | ZIP de XML: texto com marcação | Apache Arrow: binário por colunas |
-| Números | viram texto e são convertidos de novo ao abrir | ficam como número, sem conversão |
-| Velocidade | ler XML grande é lento | planilha de 2 milhões de linhas abre em cerca de 1 s (medido) |
-| Imagens e fontes | arquivos dentro do ZIP | arquivos dentro do ZIP (no `.fshz`, dentro do binário) |
-| Gravação | sem garantia se cair no meio | grava à parte e só então substitui (atômica) |
-| Ler com outras ferramentas | precisa de biblioteca de Office | Arrow abre direto em pandas, Polars e DuckDB |
-| Privacidade | metadados de conta e empresa | nada de conta nem telemetria |
-| Compatibilidade | — | os apps continuam abrindo e salvando `.xlsx`, `.docx`, `.pptx` e `.pdf` |
+| Content | ZIP of XML: marked-up text | Apache Arrow: binary, columnar |
+| Numbers | turned into text and parsed again on open | stay numbers, no conversion |
+| Speed | reading large XML is slow | a 2-million-row spreadsheet opens in about 1 s (measured) |
+| Images and fonts | files inside the ZIP | files inside the ZIP (inside the binary for `.fshz`) |
+| Saving | no guarantee if it crashes midway | writes aside, then replaces (atomic) |
+| Reading with other tools | needs an Office library | Arrow opens directly in pandas, Polars and DuckDB |
+| Privacy | account and company metadata | no account, no telemetry |
+| Compatibility | — | the apps still open and save `.xlsx`, `.docx`, `.pptx` and `.pdf` |
 
-## Bibliotecas compartilhadas
+## Shared libraries
 
-| Repositório | O que faz |
+| Repository | What it does |
 |---|---|
-| [feather-ui](https://github.com/feather-works/feather-ui) | Tema, ícones, marca e componentes Iced |
-| [feather-draw](https://github.com/feather-works/feather-draw) | Geometria, caminhos, SVG, PDF e tinta com pressão |
-| [feather-charts](https://github.com/feather-works/feather-charts) | Gráficos: modelo, tipos, eixos e desenho |
-| [feather-shapes](https://github.com/feather-works/feather-shapes) | Formas, ícones e SmartArt |
-| [feather-io](https://github.com/feather-works/feather-io) | Arquivos, tabelas, imagens e macros: formatos e conversão |
+| [pelicano](https://github.com/feather-works/pelicano) | The suite's UI toolkit in Rust: windows, widgets, translucent glass, layout inspector |
+| [feather-ui](https://github.com/feather-works/feather-ui) | Theme, icons, brand and shared components (ribbon, settings, F1 help, F12 monitor) |
+| [falcao](https://github.com/feather-works/falcao) | JavaScript engine in Rust with no dependencies; runs the macros |
+| [feather-draw](https://github.com/feather-works/feather-draw) | Geometry, paths, SVG, PDF and pressure-sensitive ink |
+| [feather-charts](https://github.com/feather-works/feather-charts) | Charts: model, types, axes and rendering |
+| [feather-shapes](https://github.com/feather-works/feather-shapes) | Shapes, icons and SmartArt |
+| [feather-io](https://github.com/feather-works/feather-io) | Files, tables, images and macros: formats and conversion |
 
-## Estado
+Which app uses which piece, and at which version: [TECHNOLOGY.md](../TECHNOLOGY.md).
 
-FeatherSheet e FeatherSlide já têm versão publicada; os demais aplicativos estão em desenvolvimento e entram no launcher conforme forem lançados.
+## Status
+
+FeatherSheet, FeatherSlide, FeatherCode and FeatherNotes have published releases; the other apps are in development and join the launcher as they ship.
